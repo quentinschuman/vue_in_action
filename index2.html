@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+    <link rel="stylesheet" type="text/css" href="style2.css">
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <div>
+            <input type="text" @input="handleInput" placeholder="请输入。。。">
+            <p>输入内容: {{ message }}</p>
+        </div>
+        <div>
+            <input type="radio" :checked="picked">
+            <label>单选按钮</label>
+        </div>
+        <br>
+        <div>
+            <input type="checkbox" :checked="checked">
+            <label>单选框</label>
+        </div>
+        <br>
+        <div>
+            <input type="radio" v-model="picked" value="html" id="html">
+            <label for="html">HTML</label>
+            <br>
+            <input type="radio" v-model="picked" value="js" id="js">
+            <label for="js">JavaScript</label>
+            <br>
+            <input type="radio" v-model="picked" value="css" id="css">
+            <label for="css">CSS</label>
+            <br>
+            <p>选择的项是：{{ picked }}</p>
+        </div>
+        <br>
+        <div>
+            <input type="checkbox" v-model="checked" value="html" id="html">
+            <label for="html">HTML</label>
+            <br>
+            <input type="checkbox" v-model="checked" value="js" id="js">
+            <label for="js">JavaScript</label>
+            <br>
+            <input type="checkbox" v-model="checked" value="css" id="css">
+            <label for="css">CSS</label>
+            <br>
+            <p>选择的项是：{{ checked }}</p>
+        </div>
+        <br>
+        <div>
+            <button @click="counter++">+1</button>
+            <p>{{ counter }}</p>
+        </div>
+        <br>
+        <div>
+            <button @click="reducer--">-1</button>
+            <p>{{ reducer }}</p>
+        </div>
+        <div>
+            <p>总数：{{ total }}</p>
+            <my-component @increase="handleGetTotal" @reduce="handleGetTotal"></my-component>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+    <script src="index2.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>标签页组件</title>
+        <link rel="stylesheet" type="text/css" href="style3.css">
+    </head>
+    <body>
+        <div id="app" v-cloak>
+            <tabs v-model="activeKey">
+                <pane label="标签一" name="1" :closable="closable">
+                    <div id="article1">标签一的内容</div>
+                </pane>
+                <pane label="标签二" name="2" :closable="closable">
+                    <div id="article2">标签二的内容</div>
+                </pane>
+                <pane label="标签三" name="3" :closable="closable">
+                    <div id="article3">标签三的内容</div>
+                </pane>
+            </tabs>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+        <script src="pane.js"></script>
+        <script src="tabs.js"></script>
+        <script type="text/javascript">
+            var app = new Vue({
+                el: "#app",
+                data: {
+                    activeKey: '1',
+                    closable: true
+                },
+                methods: {
+                }
+            })
+        </script>
+    </body>
+</html>
